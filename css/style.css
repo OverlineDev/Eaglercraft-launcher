@@ -496,8 +496,18 @@ hr {
     z-index: 5;
 }
 
-#zquick:hover {
-    background: rgba(255, 255, 255, 0.14);
-    border-color: rgba(255, 255, 255, 0.35);
-    transform: translateY(-1px);
+#zquick {
+    position: absolute;
+    right: 16vw;   /* was 12vw */
+    bottom: 1.1vw;
+    padding: 0.45vw 0.8vw;
+    border-radius: 0.45vw;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.75vw;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background .15s ease, border-color .15s ease, transform .15s ease;
+    z-index: 5;
 }
