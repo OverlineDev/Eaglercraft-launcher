@@ -316,7 +316,7 @@ document.addEventListener("click", function (event) {
     if (dropdown.style.visibility === 'visible' && !selector.contains(event.target) && !dropdown.contains(event.target)) {
         dropdowntoggle(); // Closes dropdown if clicked outside
     }
-    function openZIframe() {
+    window.openZIframe = function () {
     const w = window.open('about:blank', '_blank');
     if (!w) return;
 
@@ -337,5 +337,5 @@ document.addEventListener("click", function (event) {
 </body>
 </html>`);
     w.document.close();
-}
+};
 });
