@@ -34,60 +34,49 @@
         </div>
     </div>
     <div class="sidebar" id="sidebar">
-        <div id="gtabs1" class="sidebarOptions" onclick="openZIframe()">">
-    <div class="gTabsText">
-        <p class="eaglercraftText">FEATURED :</p>
-        <p><strong>Play EaglercraftZ 1.20</strong> in your browser</p>
-    </div>
-</div>
         <div id="gtabs1" class="sidebarOptions" onclick="openZIframe()">
-            <img src="./assets/images/sidebar/i-web.png">
+            <div class="gTabsText">
+                <p class="eaglercraftText">FEATURED :</p>
+                <p><strong>Play EaglercraftZ 1.20</strong> in your browser</p>
+            </div>
+        </div>
+
+        <div id="gtabs2" class="sidebarOptions" onclick="webedition()">
+            <img src="./assets/images/sidebar/i-web.png" alt="Web Edition">
             <div class="gTabsText">
                 <p class="eaglercraftText"> EAGLERCRAFT : </p>
                 <p>Web Edition </p>
             </div>
         </div>
+
         <div onclick="moddededition()" id="gtabs3" class="sidebarOptions">
-            <img src="./assets/images/sidebar/i-modded.png">
+            <img src="./assets/images/sidebar/i-modded.png" alt="Modded Editions">
             <div class="gTabsText">
                 <p class="eaglercraftText"> EAGLERCRAFT : </p>
                 <p>Modded Editions </p>
             </div>
         </div>
-        <div onclick="servers()" id="gtabs4" class="sidebarOptions">
-            <img src="./assets/images/sidebar/i-live.png">
-            <div class="gTabsText">
-                <p class="eaglercraftText"> EAGLERCRAFT : </p>
-                <p>Server List </p>
-            </div>
-        </div>
-        <div onclick="eaglercontrols()" id="gtabs1" class="sidebarOptions">
-            <img src="./assets/images/sidebar/i-controls.png">
+
+        <div onclick="eaglercontrols()" id="gtabs4" class="sidebarOptions">
+            <img src="./assets/images/sidebar/i-controls.png" alt="Mobile/Controller">
             <div class="gTabsText">
                 <p class="eaglercraftText"> EAGLERCRAFT : </p>
                 <p>Mobile/Controller </p>
             </div>
         </div>
-        
-        <div id="gtabs5" class="sidebarOptions sidebarBottom" onclick="errorNA('credits')">
-            <img src="./assets/images/sidebar/m-credits.png"><div class="gTabsText"><p> Credits</p></div>
-        </div>
-        <div id="gtabs6" class="sidebarOptions sidebarBottom" onclick="errorNA('settings')">
-            <img src="./assets/images/sidebar/m-settings.png"><div class="gTabsText"><p> Settings</p></div>
-        </div>
-        <div class="launcherVersion"><p>v1.0.3</p></div>
+
+        <div class="launcherVersion"><p>v1.1.2</p></div>
     </div>
+
     <div class="mainPage">
         <div class="gameHeader">
             <p id="gameedition" class="currentGame bolded">EAGLERCRAFT WEB EDITION</p>
-                <ul class="gameTabs">
-                    <li id="header1" class="headerButtons selected" onclick="playheader()">Play</li>
-                    <li id="header2" style="display: none;" class="headerButtons" onclick="errorNA('mods')">Mods</li>
-                    <li id="header3" class="headerButtons" onclick="faqsheader()">FAQ</li>
-                    <li id="header4" class="headerButtons" onclick="installationheader()">Installations</li>
-                    <li id="header5" class="headerButtons" onclick="errorNA('skins')">Skins</li>
-                    <li id="header6" class="headerButtons" onclick="errorNA('patch notes')">Patch Notes</li>
-                </ul>
+            <ul class="gameTabs">
+                <li id="header1" class="headerButtons selected" onclick="playheader()">Play</li>
+                <li id="header2" style="display: none;" class="headerButtons" onclick="errorNA('mods')">Mods</li>
+                <li id="header3" class="headerButtons" onclick="faqsheader()">FAQ</li>
+                <li id="header4" class="headerButtons" onclick="installationheader()">Installations</li>
+            </ul>
         </div>
         <div id="faq">
             <p class="bolded faqtitle">Frequently Asked Questions</p>
@@ -99,33 +88,33 @@
             <img id="game-title" src="./assets/images/web-title.png" alt="eaglercraft">
         </div>
         <div id="gameSelection">
-                <div class="dropdownSelector" onclick="dropdowntoggle()">
-                    <div style="display: flex; gap: 1vw;">
-                        <div class="centeredIcon">
-                            <img id="gameicon" src="./assets/images/mc-icons/grass.png" style="width: 2.5vw;" />
-                        </div>
-                        <div class="versionText">
-                            <p id="gametitle" class="bolded">Latest release</p>
-                            <p id="gameversion">1.12.2-u2</p>
-                        </div>
-                        <div id="dropdownuparrow" class="centeredIcon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                 viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"
-                                 stroke-linecap="round" stroke-linejoin="round" class="dropdownIcon">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M6 9l6 6l6 -6" />
-                            </svg>
-                        </div>
+            <div class="dropdownSelector" onclick="dropdowntoggle()">
+                <div style="display: flex; gap: 1vw;">
+                    <div class="centeredIcon">
+                        <img id="gameicon" src="./assets/images/mc-icons/grass.png" style="width: 2.5vw;" alt="selected game icon" />
+                    </div>
+                    <div class="versionText">
+                        <p id="gametitle" class="bolded">Latest release</p>
+                        <p id="gameversion">1.12.2-u2</p>
+                    </div>
+                    <div id="dropdownuparrow" class="centeredIcon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round" class="dropdownIcon">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M6 9l6 6l6 -6" />
+                        </svg>
                     </div>
                 </div>
+            </div>
             <div id="dropdn" class="dropdownMenu" style="visibility: hidden;"></div>
             <a id="playbutton" href="mc/1.12.2"><div id="mainbutton" class="playButton"></div></a>
 
-<a id="zquick" href="javascript:void(0)" onclick="openZIframe()">
-    Try Eaglercraft 1.20! (Z)
-</a>
+            <a id="zquick" href="javascript:void(0)" onclick="openZIframe()">
+                Try Eaglercraft 1.20! (Z)
+            </a>
 
-<div class="username centeredIcon bolded"><p id="username">Generic User</p></div>
+            <div class="username centeredIcon bolded"><p id="username">Generic User</p></div>
         </div>
     </div>
     <script src="./js/index.js"></script>
