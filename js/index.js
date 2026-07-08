@@ -316,4 +316,26 @@ document.addEventListener("click", function (event) {
     if (dropdown.style.visibility === 'visible' && !selector.contains(event.target) && !dropdown.contains(event.target)) {
         dropdowntoggle(); // Closes dropdown if clicked outside
     }
+    function openZIframe() {
+    const w = window.open('about:blank', '_blank');
+    if (!w) return;
+
+    w.document.open();
+    w.document.write(`<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EaglercraftZ 1.20</title>
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; background: #111; overflow: hidden; }
+    iframe { width: 100vw; height: 100vh; border: 0; display: block; }
+  </style>
+</head>
+<body>
+  <iframe src="https://eaglercraft-z.duckdns.org" allowfullscreen referrerpolicy="no-referrer"></iframe>
+</body>
+</html>`);
+    w.document.close();
+}
 });
