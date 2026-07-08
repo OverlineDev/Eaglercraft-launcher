@@ -328,7 +328,7 @@ document.addEventListener("click", function (event) {
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>EaglercraftZ 1.20</title>
   <style>
-    html, body { margin: 0; width: 100%; height: 100%; background: #111; overflow: hidden; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #111; }
     iframe { width: 100vw; height: 100vh; border: 0; display: block; }
   </style>
 </head>
