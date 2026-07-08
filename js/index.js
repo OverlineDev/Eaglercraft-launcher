@@ -24,28 +24,39 @@ function generateprofile(game) {
     if (!selectedGame1) {
         fetch("./assets/json/base.json").then((response) => response.json()).then((data) => {
             selectedGame1 = JSON.stringify(data[0]); localStorage.setItem("basegame", selectedGame1);
+            if (game === 1) updateGameDisplay(selectedGame1);
         });
-    };
-    if (game === 1 && selectedGame1) {selectedGame = JSON.parse(selectedGame1);  running = true;}; 
+    } else if (game === 1) {
+        updateGameDisplay(selectedGame1);
+    }
+    
     if (!selectedGame2) {
         fetch("./assets/json/modded.json").then((response) => response.json()).then((data) => {
             selectedGame2 = JSON.stringify(data[0]); localStorage.setItem("moddedgame", selectedGame2);
+            if (game === 2) updateGameDisplay(selectedGame2);
         });
-    };
-    if (game === 2 && selectedGame2) {selectedGame = JSON.parse(selectedGame2);  running = true;}; 
+    } else if (game === 2) {
+        updateGameDisplay(selectedGame2);
+    }
+    
     if (!selectedGame3) {
         fetch("./assets/json/assisted.json").then((response) => response.json()).then((data) => {
             selectedGame3 = JSON.stringify(data[0]); localStorage.setItem("assisted", selectedGame3);
+            if (game === 3) updateGameDisplay(selectedGame3);
         });
-    };
-    if (game === 3 && selectedGame3) {selectedGame = JSON.parse(selectedGame3);  running = true;}; 
-    if (running === true) {
+    } else if (game === 3) {
+        updateGameDisplay(selectedGame3);
+    }
+}
+
+function updateGameDisplay(gameJson) {
+    if (!gameJson) return;
+    let selectedGame = JSON.parse(gameJson);
     document.getElementById('gametitle').innerHTML = selectedGame.title;
     document.getElementById('gameversion').innerHTML = selectedGame.version;
     document.getElementById('gameicon').src = selectedGame.icon;
     document.getElementById('playbutton').href = selectedGame.link;
-    }
-};
+}
 
 // Generate Game Options
 const dropdown = document.getElementById("dropdn");
@@ -189,7 +200,6 @@ let launcher = "./assets/json/base.json";
 function webedition(){
     launcher = "./assets/json/base.json";
     resetTabSelected();
-    generateprofile(1);
     generategames(launcher);
     generatelaunchers(launcher);
     document.getElementById('game-bg').style.backgroundImage = 'url(./assets/images/web-edition.jpg)';
@@ -197,11 +207,11 @@ function webedition(){
     document.getElementById('gameedition').innerHTML = 'EAGLERCRAFT WEB EDITION';
     document.getElementById('header2').style.display = 'none';
     document.getElementById('gtabs2').classList.add('selected');
+    generateprofile(1);
 }
 function moddededition(){
     launcher = "./assets/json/modded.json";
     resetTabSelected();
-    generateprofile(2);
     generategames(launcher);
     generatelaunchers(launcher);
     document.getElementById('game-bg').style.backgroundImage = 'url(./assets/images/modded-edition.jpg)';
@@ -209,11 +219,11 @@ function moddededition(){
     document.getElementById('gameedition').innerHTML = 'EAGLERCRAFT MODDED';
     document.getElementById('header5').style.display = 'none';
     document.getElementById('gtabs3').classList.add('selected');
+    generateprofile(2);
 }
 function eaglercontrols(){
     launcher = "./assets/json/assisted.json";
     resetTabSelected();
-    generateprofile(3);
     generategames(launcher);
     generatelaunchers(launcher);
     document.getElementById('game-bg').style.backgroundImage = 'url(./assets/images/controls-edition.jpg)';
@@ -222,6 +232,7 @@ function eaglercontrols(){
     document.getElementById('header2').style.display = 'none';
     document.getElementById('header5').style.display = 'none';
     document.getElementById('gtabs4').classList.add('selected');
+    generateprofile(3);
 }
 
 // Header Options
@@ -249,10 +260,10 @@ function installationheader(){
 function dropdowntoggle(){
     if (dropdown.style.visibility === 'hidden') {
         dropdown.style.visibility = 'visible';
-        document.getElementById('dropdownuparrow').innerHTML = '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 20 20"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="dropdownIcon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 15l6 -6l6 6" /></svg>';
+        document.getElementById('dropdownuparrow').innerHTML = '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 20 20"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="dropdownIcon"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M6 9l6 6l6 -6" /></svg>';
     } else {
         dropdown.style.visibility = 'hidden'; 
-        document.getElementById('dropdownuparrow').innerHTML = '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 20 20"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="dropdownIcon"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>';
+        document.getElementById('dropdownuparrow').innerHTML = '<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 20 20"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="dropdownIcon"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M6 9l6 6l6 -6" /></svg>';
     }
 }
 
