@@ -56,13 +56,6 @@
             <p>Modded Editions </p>
         </div>
     </div>
-
-    <div onclick="servers()" id="gtabs4" class="sidebarOptions">
-        <img src="./assets/images/sidebar/i-live.png">
-        <div class="gTabsText">
-            <p class="eaglercraftText"> EAGLERCRAFT : </p>
-            <p>Server List </p>
-        </div>
     </div>
 
     <div onclick="eaglercontrols()" id="gtabs5" class="sidebarOptions">
@@ -71,27 +64,18 @@
             <p class="eaglercraftText"> EAGLERCRAFT : </p>
             <p>Mobile/Controller </p>
         </div>
-    </div>
-
-    <div id="gtabs6" class="sidebarOptions sidebarBottom" onclick="errorNA('credits')">
-        <img src="./assets/images/sidebar/m-credits.png"><div class="gTabsText"><p> Credits</p></div>
-    </div>
-    <div id="gtabs7" class="sidebarOptions sidebarBottom" onclick="errorNA('settings')">
-        <img src="./assets/images/sidebar/m-settings.png"><div class="gTabsText"><p> Settings</p></div>
-    </div>
-    <div class="launcherVersion"><p>v1.0.3</p></div>
+    <div class="launcherVersion"><p>v1.1.2</p></div>
 </div>
     <div class="mainPage">
         <div class="gameHeader">
             <p id="gameedition" class="currentGame bolded">EAGLERCRAFT WEB EDITION</p>
-                <ul class="gameTabs">
-                    <li id="header1" class="headerButtons selected" onclick="playheader()">Play</li>
-                    <li id="header2" style="display: none;" class="headerButtons" onclick="errorNA('mods')">Mods</li>
-                    <li id="header3" class="headerButtons" onclick="faqsheader()">FAQ</li>
-                    <li id="header4" class="headerButtons" onclick="installationheader()">Installations</li>
-                    <li id="header5" class="headerButtons" onclick="errorNA('skins')">Skins</li>
-                    <li id="header6" class="headerButtons" onclick="errorNA('patch notes')">Patch Notes</li>
-                </ul>
+                <!-- In .gameTabs keep only these -->
+<ul class="gameTabs">
+    <li id="header1" class="headerButtons selected" onclick="playheader()">Play</li>
+    <li id="header2" style="display: none;" class="headerButtons" onclick="errorNA('mods')">Mods</li>
+    <li id="header3" class="headerButtons" onclick="faqsheader()">FAQ</li>
+    <li id="header4" class="headerButtons" onclick="installationheader()">Installations</li>
+</ul>
         </div>
         <div id="faq">
             <p class="bolded faqtitle">Frequently Asked Questions</p>
